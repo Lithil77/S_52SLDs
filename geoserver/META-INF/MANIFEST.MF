@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Created-By: Maven WAR Plugin 3.4.0
+Build-Jdk-Spec: 11
+Specification-Title: GeoServer Web Application
+Specification-Version: 2.26
+Specification-Vendor: Open Source Geospatial Foundation
+Implementation-Title: GeoServer Web Application
+Implementation-Version: 2.26.0
+Implementation-Vendor: Open Source Geospatial Foundation
+Application-Name: 
+Build-Timestamp: 21-Sep-2024 20:04
+GeoServerModule: core
+Git-Revision: d0fee8b80d3bdcf70f33af07fdd211d959f31e80
+Iteration-Name: 
+Project-Version: 2.26.0
+
