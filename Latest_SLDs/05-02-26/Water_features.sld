@@ -232,6 +232,239 @@
 				</se:Rule>
 				<!-- Viewing group order:34051 and priority:4 -->
 				<se:Rule>
+					<se:Name>WRECKS (P) - CATWRK=3</se:Name>
+					<ogc:Filter>
+						<ogc:And>
+							<ogc:PropertyIsEqualTo>
+								<ogc:PropertyName>obj</ogc:PropertyName>
+								<ogc:Literal>WRECKS</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<ogc:PropertyIsEqualTo>
+								<ogc:Function name="dimension">
+									<ogc:PropertyName>geo</ogc:PropertyName>
+								</ogc:Function>
+								<ogc:Literal>0</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<ogc:PropertyIsEqualTo>
+								<ogc:Function name="attVal">
+									<ogc:PropertyName>att</ogc:PropertyName>
+									<ogc:Literal>CATWRK</ogc:Literal>
+								</ogc:Function>
+								<ogc:Literal>3</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+						</ogc:And>
+					</ogc:Filter>
+					<se:PointSymbolizer>
+						<se:Graphic>
+							<se:ExternalGraphic>
+								<se:OnlineResource xlink:type="simple" xlink:href="S-52_SVGs/FOULGND1.svg" />
+								<se:Format>image/svg+xml</se:Format>
+							</se:ExternalGraphic>
+							<se:Size>5</se:Size>
+						</se:Graphic>
+					</se:PointSymbolizer>
+				</se:Rule>
+				<!-- Viewing group order:34051 and priority:4 -->
+				<se:Rule>
+					<se:Name>Dangerous Wrecks (Combined)</se:Name>
+					<ogc:Filter>
+						<ogc:And>
+							<ogc:PropertyIsEqualTo>
+								<ogc:PropertyName>obj</ogc:PropertyName>
+								<ogc:Literal>WRECKS</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<ogc:PropertyIsEqualTo>
+								<ogc:Function name="dimension">
+									<ogc:PropertyName>geo</ogc:PropertyName>
+								</ogc:Function>
+								<ogc:Literal>0</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<ogc:Or>
+								<ogc:And>
+									<ogc:PropertyIsLessThan>
+										<ogc:Function name="attVal">
+											<ogc:PropertyName>att</ogc:PropertyName>
+											<ogc:Literal>VALSOU</ogc:Literal>
+										</ogc:Function>
+										<ogc:Literal>30</ogc:Literal>
+									</ogc:PropertyIsLessThan>
+									<ogc:Not>
+										<ogc:PropertyIsEqualTo>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALSOU</ogc:Literal>
+											</ogc:Function>
+											<ogc:Literal>0</ogc:Literal>
+										</ogc:PropertyIsEqualTo>
+									</ogc:Not>
+								</ogc:And>
+								<ogc:And>
+									<ogc:PropertyIsLessThan>
+										<ogc:Function name="attVal">
+											<ogc:PropertyName>att</ogc:PropertyName>
+											<ogc:Literal>VALDCO</ogc:Literal>
+										</ogc:Function>
+										<ogc:Literal>30</ogc:Literal>
+									</ogc:PropertyIsLessThan>
+									<ogc:Not>
+										<ogc:PropertyIsEqualTo>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALDCO</ogc:Literal>
+											</ogc:Function>
+											<ogc:Literal>0</ogc:Literal>
+										</ogc:PropertyIsEqualTo>
+									</ogc:Not>
+								</ogc:And>
+								<ogc:And>
+									<ogc:Or>
+										<ogc:PropertyIsNull>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALSOU</ogc:Literal>
+											</ogc:Function>
+										</ogc:PropertyIsNull>
+										<ogc:PropertyIsEqualTo>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALSOU</ogc:Literal>
+											</ogc:Function>
+											<ogc:Literal>0</ogc:Literal>
+										</ogc:PropertyIsEqualTo>
+									</ogc:Or>
+									<ogc:Or>
+										<ogc:PropertyIsNull>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALDCO</ogc:Literal>
+											</ogc:Function>
+										</ogc:PropertyIsNull>
+										<ogc:PropertyIsEqualTo>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALDCO</ogc:Literal>
+											</ogc:Function>
+											<ogc:Literal>0</ogc:Literal>
+										</ogc:PropertyIsEqualTo>
+									</ogc:Or>
+								</ogc:And>
+							</ogc:Or>
+						</ogc:And>
+					</ogc:Filter>
+					<se:PointSymbolizer>
+						<se:Graphic>
+							<se:ExternalGraphic>
+								<se:OnlineResource xlink:type="simple" xlink:href="S-52_SVGs/DANGER01.svg" />
+								<se:Format>image/svg+xml</se:Format>
+							</se:ExternalGraphic>
+							<se:Size>15</se:Size>
+						</se:Graphic>
+					</se:PointSymbolizer>
+				</se:Rule>
+				<!-- Viewing group order:34051 and priority:4 -->
+				<se:Rule>
+					<se:Name>Non-Dangerous Wrecks</se:Name>
+					<ogc:Filter>
+						<ogc:And>
+							<!-- WRECKS point objects -->
+							<ogc:PropertyIsEqualTo>
+								<ogc:PropertyName>obj</ogc:PropertyName>
+								<ogc:Literal>WRECKS</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<ogc:PropertyIsEqualTo>
+								<ogc:Function name="dimension">
+									<ogc:PropertyName>geo</ogc:PropertyName>
+								</ogc:Function>
+								<ogc:Literal>0</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<!-- SAFE depth -->
+							<ogc:Or>
+								<ogc:And>
+									<ogc:PropertyIsGreaterThanOrEqualTo>
+										<ogc:Function name="attVal">
+											<ogc:PropertyName>att</ogc:PropertyName>
+											<ogc:Literal>VALSOU</ogc:Literal>
+										</ogc:Function>
+										<ogc:Literal>30</ogc:Literal>
+									</ogc:PropertyIsGreaterThanOrEqualTo>
+									<ogc:Not>
+										<ogc:PropertyIsEqualTo>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALSOU</ogc:Literal>
+											</ogc:Function>
+											<ogc:Literal>0</ogc:Literal>
+										</ogc:PropertyIsEqualTo>
+									</ogc:Not>
+								</ogc:And>
+								<ogc:And>
+									<ogc:PropertyIsGreaterThanOrEqualTo>
+										<ogc:Function name="attVal">
+											<ogc:PropertyName>att</ogc:PropertyName>
+											<ogc:Literal>VALDCO</ogc:Literal>
+										</ogc:Function>
+										<ogc:Literal>30</ogc:Literal>
+									</ogc:PropertyIsGreaterThanOrEqualTo>
+									<ogc:Not>
+										<ogc:PropertyIsEqualTo>
+											<ogc:Function name="attVal">
+												<ogc:PropertyName>att</ogc:PropertyName>
+												<ogc:Literal>VALDCO</ogc:Literal>
+											</ogc:Function>
+											<ogc:Literal>0</ogc:Literal>
+										</ogc:PropertyIsEqualTo>
+									</ogc:Not>
+								</ogc:And>
+							</ogc:Or>
+						</ogc:And>
+					</ogc:Filter>
+					<se:PointSymbolizer>
+						<se:Graphic>
+							<se:ExternalGraphic>
+								<se:OnlineResource xlink:type="simple" xlink:href="S-52_SVGs/WRECKS04.svg"/>
+								<se:Format>image/svg+xml</se:Format>
+							</se:ExternalGraphic>
+							<se:Size>12</se:Size>
+						</se:Graphic>
+					</se:PointSymbolizer>
+				</se:Rule>
+				<!-- Viewing group order:34050 and priority:4 -->
+				<se:Rule>
+					<se:Name>WRECKS (A) - CATWRK=3</se:Name>
+					<ogc:Filter>
+						<ogc:And>
+							<ogc:PropertyIsEqualTo>
+								<ogc:PropertyName>obj</ogc:PropertyName>
+								<ogc:Literal>WRECKS</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<ogc:PropertyIsEqualTo>
+								<ogc:Function name="dimension">
+									<ogc:PropertyName>geo</ogc:PropertyName>
+								</ogc:Function>
+								<ogc:Literal>2</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+							<ogc:PropertyIsEqualTo>
+								<ogc:Function name="attVal">
+									<ogc:PropertyName>att</ogc:PropertyName>
+									<ogc:Literal>CATWRK</ogc:Literal>
+								</ogc:Function>
+								<ogc:Literal>3</ogc:Literal>
+							</ogc:PropertyIsEqualTo>
+						</ogc:And>
+					</ogc:Filter>
+					<se:PolygonSymbolizer>
+						<!-- <se:Fill>
+							<se:SvgParameter name="fill">#58AF9C</se:SvgParameter>
+						</se:Fill>		 -->
+						<se:Stroke>
+							<se:SvgParameter name="stroke">#000000</se:SvgParameter>
+							<se:SvgParameter name="stroke-width">1</se:SvgParameter>
+							<se:SvgParameter name="stroke-dasharray">12 6</se:SvgParameter>
+						</se:Stroke>
+					</se:PolygonSymbolizer>
+				</se:Rule>
+				<!-- Viewing group order:34051 and priority:4 -->
+				<se:Rule>
 					<se:Name>OBSTRN (P) - All other cases</se:Name>
 					<ogc:Filter>
 						<ogc:And>
